@@ -35,6 +35,7 @@ function App() {
                             <th>Contract Name</th>
                             <th>Balance</th>
                             <th>24 Hr Balance Increase</th>
+                            <th>Volume</th>
                             <th>24 Hr Vol. Increase</th>
                         </tr>
                     </thead>
@@ -45,6 +46,7 @@ function App() {
                                 <td>{d.contract}</td>
                                 <td>{d.balance}</td>
                                 <td>{d.balance_diff}</td>
+                                <td>{d.volume}</td>
                                 <td>{d.vol_change}</td>
                             </tr>
                         </tbody>

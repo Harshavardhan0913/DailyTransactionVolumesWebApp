@@ -101,15 +101,16 @@ class ApiConnector:
             bal_diff = bal - float(db_balances[i]['balance'])
             print(bal_diff)
             #print(db_balances[i]['balance'])
+            vol = (bal*coin_price*2*100000)/15
             vol_change = (bal_diff*coin_price*2*100000)/15
-            balances.append({'contract': self.contracts[i]['contract_name'], 'balance': bal, 'balance_diff': bal_diff , 'vol_change':vol_change})
+            balances.append({'contract': self.contracts[i]['contract_name'], 'balance': bal, 'balance_diff': bal_diff , 'vol_change':vol_change, 'volume': vol})
             db_bal.append((self.contracts[i]['contract_name'], bal, ts))
         #print(balances)
         #print(db_bal)
         #print(ts)
         #print(float(db_balances[0]['insertedOn']))
 
-        if ts - float(db_balances[0]['insertedOn']) >= float(86400):
+        if int(ts*1000 - float(1641886200000))%86400 == 0:
             db.addBalanceHistory(db_bal)
 
         return balances
