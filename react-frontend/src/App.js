@@ -41,15 +41,15 @@ function App() {
                     </thead>
                     {data.map((d,i) =>{
                         return (
-                        <tbody>
-                            <tr key={i}>
-                                <td>{d.contract}</td>
-                                <td>{d.balance}</td>
-                                <td>{d.balance_diff}</td>
-                                <td>{d.volume}</td>
-                                <td>{d.vol_change}</td>
-                            </tr>
-                        </tbody>
+                            <tbody>
+                                <tr key={i}>
+                                    <td>{d.contract}</td>
+                                    <td>{d.balance}</td>
+                                    <td>{d.balance_diff}</td>
+                                    <td>{d.volume}</td>
+                                    <td>{d.vol_change}</td>
+                                </tr>
+                            </tbody>
                             )
                         })
                     }
